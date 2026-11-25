@@ -533,6 +533,12 @@ header.topbar{background:rgba(255,255,255,.74); border-bottom:2px solid rgba(214
   .qnav .navbody, .qnav:not(.open) .navbody{display:block !important;} .qnav .grp{flex:none; margin:0 0 10px;} .qnav .grp:last-child{margin-bottom:0;}
   .qnav .grp-h{padding:6px 11px; margin-bottom:6px; font-size:.95rem;} .qnav .cells{grid-template-columns:repeat(6,minmax(0,1fr)); gap:5px;}
   .qnav .cell{aspect-ratio:1/1; min-height:0; border-radius:10px; font-size:.98rem;} }
+/* màn ≤ 1040 px (điện thoại, máy tính bảng, cửa sổ hẹp – danh sách nằm trên khung câu): BỎ tên mục, chỉ còn các ô số chạy liền,
+   giữa hai mục có khoảng cách lớn hơn (người dùng 25/11 15:24) */
+@media (max-width:1040px){ .qnav .navbody, .qnav:not(.open) .navbody{display:flex !important; flex-direction:row; flex-wrap:wrap; gap:6px; margin-top:0;}
+  .qnav .grp-h{display:none !important;} .qnav .grp, .qnav .cells{display:contents;}
+  .qnav .cell{flex:0 0 auto; width:44px; height:40px; min-height:0; aspect-ratio:auto; border-radius:10px; font-size:1rem;}
+  .qnav .grp .cell:last-child{margin-right:12px;} .qnav .grp:last-child .cell:last-child{margin-right:0;} .qnav{padding:10px 12px;} }
 /* === GỬI KHI NỘP 16/11/2026 === */
 .gui-tt{margin:16px auto 0;max-width:640px;padding:10px 16px;border-radius:12px;font-weight:700;text-align:center;line-height:1.45;background:#FFF6E0;color:#7A5200;border:1px solid #F3DFA8}
 .gui-tt:empty{display:none}
